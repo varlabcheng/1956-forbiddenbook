@@ -1,16 +1,33 @@
+import homeHero from '../assets/index-img-2.png'; // 假設你的背景圖檔名
+
 //導出Home函數組件
 export default function Home() {
   return (
-    <div className="p-10 text-center text-4xl font-bold text-cyan-400">
+    <div className="relative h-screen w-full overflow-hidden">
+      {/* 背景圖片層 */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${homeHero})` }}
+      >
+        {/* 黑色遮罩，讓文字更好讀 */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
 
-      {/* p (Padding)-10: 內邊距
-          text-center: 文字居中
-          text-4xl: 超大字體
-          font-bold: 文字加粗
-          text-cyan-400: 前景色
-      */}
-
-      這是 Home 頁面
+      {/* 內容層 */}
+      <div className="relative z-10 flex h-full flex-col items-center justify-center text-white text-center">
+        <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tighter">
+          1956 · 不該看的書
+        </h1>
+        <p className="text-xl md:text-2xl mb-8 tracking-widest font-light">
+          VR 歷史體驗遊戲
+        </p>
+        
+        <button className="px-8 py-3 bg-white text-black rounded-full font-medium hover:bg-gray-200 transition-all duration-300 shadow-xl">
+          <a href="/Introduction" className="text-black no-underline">
+            欲知詳情
+          </a>
+        </button>
+      </div>
     </div>
     );
 }
