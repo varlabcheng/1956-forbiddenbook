@@ -108,8 +108,7 @@ export default function Making() {
             to="/Video" 
             className="group px-14 py-5 bg-gray-900 text-white rounded-full text-lg font-bold hover:bg-orange-600 transition-all shadow-2xl flex items-center gap-4 active:scale-95"
           >
-            觀看成果影片
-            <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
+            成果影片
           </Link>
         </div>
 
