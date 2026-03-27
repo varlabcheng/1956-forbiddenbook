@@ -90,11 +90,15 @@ export default function Making() {
         </div>
         <div className="mt-32 mb-20 flex flex-col items-center relative z-10">
           <Link 
-            to="/Video" 
-            className="group px-14 py-5 bg-gray-900 text-white rounded-full text-lg font-bold hover:bg-orange-600 transition-all shadow-2xl flex items-center gap-4 active:scale-95"
-          >
-            成果影片
-          </Link>
+  to="/Video"
+  className="inline-block group active:scale-95 transition-all cursor-pointer"
+>
+  <button className="px-14 py-4 bg-[#161b22]/40 backdrop-blur-md border border-white/20 rounded-full text-lg font-bold text-white transition-all duration-300 
+                     group-hover:bg-[#30363d]/80 group-hover:border-white/50 group-hover:shadow-[0_0_25px_rgba(255,255,255,0.15)] 
+                     cursor-pointer">
+    成果影片
+  </button>
+</Link>
         </div>
       </div>
     </div>
