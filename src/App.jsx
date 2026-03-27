@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 
-// 1. 導入 Logo 圖片 (請確保圖片放在 src/assets/logo.png)
+// 導入 Logo 圖片
 import logo from './assets/logo.png'; 
 
 // 導入頁面組件
@@ -21,11 +21,9 @@ function App() {
     <Router>
       <div className="min-h-screen bg-black text-white font-sans">
         
-        {/* 導覽列：增加高度 (h-20)、背景微透 (backdrop-blur) */}
+        {/* 導覽列 */}
         <nav className="bg-[#0a0a0a]/95 backdrop-blur-md sticky top-0 z-100 border-b border-white/10">
           <div className="max-w-7xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
-            
-            {/* 左側：Logo + 標題 (字體加大) */}
             <div className="shrink-0">
               <Link to="/" onClick={closeMenu} className="flex items-center gap-3 group">
                 <img src={logo} alt="Logo" className="w-9 h-9 object-contain" />
@@ -44,16 +42,12 @@ function App() {
               <div className={`w-6 h-0.5 bg-white transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></div>
               <div className={`w-6 h-0.5 bg-white transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
             </button>
-
-            {/* 右側：電腦版選單 (字體加大 + 變粗體) */}
             <div className="hidden md:flex gap-10 text-base md:text-lg font-bold tracking-widest uppercase">
               <Link to="/Introduction" className="hover:text-orange-400 transition-colors opacity-95 hover:opacity-100">簡介</Link>
               <Link to="/Making" className="hover:text-orange-400 transition-colors opacity-95 hover:opacity-100">製作歷程</Link>
               <Link to="/Video" className="hover:text-orange-400 transition-colors opacity-95 hover:opacity-100">成果影片</Link>
             </div>
           </div>
-
-          {/* 手機版下拉選單 (字體同步加大 + 加粗) */}
           <div className={`
             md:hidden absolute top-20 left-0 w-full bg-[#0a0a0a]/98 backdrop-blur-lg border-b border-white/10
             overflow-hidden transition-all duration-300 ease-in-out
@@ -67,7 +61,7 @@ function App() {
           </div>
         </nav>
 
-        {/* 路由出口：去除外層 container 以利 Home 頁面全螢幕展示 */}
+        {/* 路由出口 */}
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

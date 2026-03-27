@@ -19,31 +19,24 @@ export default function Making() {
   return (
     <div className="min-h-screen bg-white py-16 md:py-24 px-4 text-gray-800 font-sans">
       <div className="max-w-7xl mx-auto">
-        
-        {/* 1. 頁面大標題 - 稍微縮小 */}
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-16 md:mb-20 tracking-widest">
           製作歷程
         </h1>
-
-        {/* 2. 第一步：資料蒐集 (完全置中) */}
         <div className="text-center mb-20 md:mb-32 relative z-10">
           <span className="text-3xl md:text-4xl font-black text-orange-500 italic uppercase tracking-tighter block whitespace-nowrap">
             資料蒐集
           </span>
         </div>
 
-        {/* 3. 時間軸區域 */}
+        {/* 3. 時間軸 */}
         <div className="relative">
           
-          {/* 中心裝飾線 (電腦版顯示) */}
+          {/* 中心線 (電腦版顯示) */}
           <div className="absolute left-1/2 -translate-x-1/2 w-px h-full bg-orange-200 hidden md:block z-0" />
 
           <div className="space-y-24 md:space-y-40">
             {makingSteps.map((step, index) => {
-              // 跳過已經置中的資料蒐集
               if (step.id === 1) return null;
-
-              // ⚠️ 判斷是否為最後一個項目 (id: 6) 用於延伸連線
               const isLast = step.id === 6;
 
               return (
@@ -52,21 +45,21 @@ export default function Making() {
                   className={`flex flex-col md:flex-row items-center justify-between relative ${index % 2 === 1 ? '' : 'md:flex-row-reverse'}`}
                 >
                   
-                  {/* (手機版專用) 步驟標籤 - 先出現在卡片上方 */}
+                  {/* 手機版步驟 */}
                   <div className="w-full md:hidden mb-6 text-center z-10">
                     <span className="text-2xl font-bold text-orange-500 italic uppercase tracking-widest block whitespace-nowrap">
                       {step.cat}
                     </span>
                   </div>
 
-                  {/* 內容卡片區 - 修正圖片裁切與RWD寬度 */}
+                  {/* 內容卡片區 */}
                   <div className="w-full md:w-[42%] z-20">
                     <div className="bg-white p-6 md:p-8 rounded-3xl shadow-[0_15px_50px_rgba(0,0,0,0.06)] hover:shadow-2xl transition-all duration-500 border border-gray-50 flex flex-col items-center">
                       {step.img && (
                         <img 
                           src={step.img} 
                           alt={step.cat} 
-                          className="w-full h-auto rounded-2xl mb-8 shadow-sm block" // 移除 object-cover 與 max-h
+                          className="w-full h-auto rounded-2xl mb-8 shadow-sm block" 
                         />
                       )}
                       {step.desc && (
@@ -77,17 +70,13 @@ export default function Making() {
                     </div>
                   </div>
 
-                  {/* 中心節點與延伸連線 (電腦版顯示) */}
+                  {/* 中心節點延伸 */}
                   <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 rounded-full items-center justify-center shadow-sm ${isLast ? 'w-16 h-16 border-4 border-orange-300 z-30' : 'w-12 h-12 bg-white border-2 border-orange-300 z-20'}`}>
                     <div className={`${isLast ? 'w-8 h-8' : 'w-4 h-4'} rounded-full bg-orange-400 shadow-inner`}></div>
-                    
-                    {/* ✅ 在最後一個節點下方延伸線，徹底連好它 */}
                     {isLast && (
                       <div className="absolute top-[calc(100%+12px)] w-px h-28 bg-linear-to-b from-orange-400 to-transparent"></div>
                     )}
                   </div>
-
-                  {/* (電腦版專用) 側邊大標籤 - 全部縮小 🔥 統一至text-3xl 🔥 */}
                   <div className={`hidden md:block md:w-[42%] mt-12 md:mt-0 z-20 ${index % 2 === 1 ? 'md:pl-32 text-left' : 'md:pr-32 md:text-right'}`}>
                     <span className="text-2xl md:text-3xl font-black text-orange-500 italic uppercase tracking-wider block whitespace-nowrap">
                       {step.cat}
@@ -99,11 +88,7 @@ export default function Making() {
             })}
           </div>
         </div>
-
-        {/* 4. 底部引導按鈕 - 刪除斷線並拉近距離 */}
         <div className="mt-32 mb-20 flex flex-col items-center relative z-10">
-          {/* ✅ 原本這裡斷掉的線 (div) 已刪除 */}
-          
           <Link 
             to="/Video" 
             className="group px-14 py-5 bg-gray-900 text-white rounded-full text-lg font-bold hover:bg-orange-600 transition-all shadow-2xl flex items-center gap-4 active:scale-95"

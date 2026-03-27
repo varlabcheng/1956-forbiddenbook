@@ -1,7 +1,6 @@
-import homeHero from '../assets/introduction-img-1.png'; //導入背景圖片
+import homeHero from '../assets/introduction-img-1.png'; 
 import { Link } from 'react-router-dom';
 
-//導出Introduction函數組件
 export default function Introduction() {
   return (
     <div className="relative h-screen w-full overflow-hidden">
@@ -10,7 +9,6 @@ export default function Introduction() {
          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${homeHero})` }}
       >
-        {/* 黑色遮罩，讓文字更好讀 */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
  

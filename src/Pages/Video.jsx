@@ -5,7 +5,7 @@ export default function Video() {
       <div className="mb-6">
         <a 
           href="https://sites.google.com/view/khcheng/" 
-          className="hover:text-blue-600 transition-colors" // 滑鼠懸停變色
+          className="hover:text-blue-600 transition-colors" 
           target="_blank" 
           rel="noopener noreferrer" 
         >

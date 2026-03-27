@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black font-sans">
-      {/* 1. 背景圖片層 */}
+      {/* 背景圖片層 */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-10000 hover:scale-105"
         style={{ backgroundImage: `url(${homeHero})` }}
@@ -12,7 +12,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      {/* 2. 內容層 */}
+      {/* 內容層 */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-white text-center px-6">
         
         {/* 主標題 */}
@@ -25,7 +25,7 @@ export default function Home() {
           VR 歷史體驗遊戲
         </p>
         
-        {/* 3. 優化後的按鈕：直接使用 Link 作為容器 */}
+        {/* 按鈕 */}
         <Link 
           to="/Introduction"
           className="px-10 py-4 bg-white text-black rounded-full text-lg font-bold 
